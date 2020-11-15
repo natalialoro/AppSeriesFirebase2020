@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "436283488254",
+    "firebase_url": "https://appseriesfirebase2020.firebaseio.com",
+    "project_id": "appseriesfirebase2020",
+    "storage_bucket": "appseriesfirebase2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436283488254:android:d2f077ad2ab80a4f8c72af",
+        "android_client_info": {
+          "package_name": "com.example.appseriesfirebase2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436283488254-jpn7jeg71498kfsq9214rhrrt5nldc1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzo-ccttdGlY4EMopJO0tirb3Gbtr2YZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436283488254-jpn7jeg71498kfsq9214rhrrt5nldc1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
