@@ -3,6 +3,7 @@ package com.example.appseriesfirebase2020;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.appseriesfirebase2020.adapters.SerieAdapter;
+import com.example.appseriesfirebase2020.models.DetalleActivity;
+import com.example.appseriesfirebase2020.models.LoginActivity;
 import com.example.appseriesfirebase2020.models.SerieModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
     protected FirebaseFirestore db;
     private String TAG = "SRNOT";
     final private String collection = "series";
-    private ListView lv_main_notas;
+    private ListView lv_main_series;
     private Button btn_main_nuevo, btn_main_login;
     private ArrayList<SerieModel> list;
     private SerieAdapter adapter;
     private SerieModel model;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = FirebaseFirestore.getInstance();
-        lv_main_notas = findViewById(R.id.lv_main_series);
+        lv_main_series = findViewById(R.id.lv_main_series);
         btn_main_nuevo = findViewById(R.id.btn_main_nuevo);
         btn_main_login = findViewById(R.id.btn_main_login);
 
@@ -112,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     private void goToRegister(){
         Intent nuevo = new Intent(this, RegistroActivity.class);
         startActivity(nuevo);
@@ -133,4 +138,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, dClass);
         startActivity(intent);
     }
+
+
 }

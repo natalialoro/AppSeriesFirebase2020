@@ -6,6 +6,7 @@ public class SerieModel implements Serializable {
     private int _id;
     private String titulo;
     private String contenido;
+    private String fbId;
 
     public SerieModel() {
     }
@@ -52,5 +53,13 @@ public class SerieModel implements Serializable {
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
+    }
+
+    public void setFbId(String fbId) {
+        this.fbId = fbId;
+    }
+
+    public String getFbId() {
+        return fbId;
     }
 }

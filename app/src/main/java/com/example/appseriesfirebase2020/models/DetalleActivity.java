@@ -8,7 +8,8 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.appnotasfirebase20202.models.NotaModel;
+import com.example.appseriesfirebase2020.models.SerieModel;
+import com.example.appseriesfirebase2020.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -19,9 +20,9 @@ public class DetalleActivity extends AppCompatActivity {
 
     private EditText tv_detalle_titulo, tv_detalle_contenido;
     protected FirebaseFirestore db;
-    private String TAG = "LFNOT";
-    final private String collection = "notes";
-    private NotaModel model;
+    private String TAG = "SRNOT";
+    final private String collection = "series";
+    private SerieModel model;
     private DocumentReference documentReference;
 
     @Override
@@ -38,7 +39,7 @@ public class DetalleActivity extends AppCompatActivity {
             tv_detalle_titulo.setText(id);
             updateUI(id);
         }else{
-            tv_detalle_titulo.setText("No recibimos nada");
+            tv_detalle_titulo.setText("No recibimos informacion");
         }
 
 
@@ -54,7 +55,7 @@ public class DetalleActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    model = document.toObject(NotaModel.class);
+                    model = document.toObject(SerieModel.class);
                     model.setFbId(document.getId());
                     if(model != null){
                         tv_detalle_titulo.setText(model.getTitulo());
@@ -69,7 +70,7 @@ public class DetalleActivity extends AppCompatActivity {
 
     }
 
-    private void updateModel(NotaModel model){
+    private void updateModel(SerieModel model){
         model.setTitulo(tv_detalle_titulo.getText().toString());
 
         String cont = tv_detalle_titulo.getText().toString();
@@ -80,7 +81,7 @@ public class DetalleActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Log.d(TAG, "Dio");
+                            Log.d(TAG, "Recibimos informacion ");
                         }
                     }
                 });
